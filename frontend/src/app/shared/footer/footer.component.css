@@ -1,0 +1,30 @@
+#siteUrl {
+    text-decoration-line: none;
+}
+
+#siteUrl:hover{
+    color: #3197cb !important;
+}
+
+#links {
+    font-size: large;
+    color: black;
+}
+
+#links a:hover{
+    color: #3197cb;
+}
+
+#social i{
+    font-size: x-large;
+    color: black;
+}
+
+#social i:hover{
+    color: #3197cb;
+}
+
+#contacts i{
+    font-size: large;
+    color: black; 
+}

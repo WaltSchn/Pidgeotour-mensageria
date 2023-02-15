@@ -1,0 +1,125 @@
+<div class="container">
+    <div class="row my-2">
+        <div class="container">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title" > Carrinho </h2>
+                        <p class="card-text"></p>
+                        <div *ngIf="!mensagem">
+                            <div>Informações do pedido</div>
+                            <br/>
+                            <table mat-table [dataSource]="this.carrinho" class="mat-elevation-z8">                              
+                                <!-- Position Column -->
+                                <ng-container matColumnDef="nome">
+                                  <th mat-header-cell *matHeaderCellDef> Roteiro </th>
+                                  <td mat-cell *matCellDef="let element"> {{element.nome}} </td>
+                                  <td mat-footer-cell *matFooterCellDef> Total </td>
+                                </ng-container>
+                              
+                                <!-- Name Column -->
+                                <ng-container matColumnDef="data">
+                                  <th mat-header-cell *matHeaderCellDef> Data </th>
+                                  <td mat-cell *matCellDef="let element"> {{element.data}} </td>
+                                  <td mat-footer-cell *matFooterCellDef> </td>
+                                </ng-container>
+                              
+                                <!-- Weight Column -->
+                                <ng-container matColumnDef="qtde">
+                                  <th mat-header-cell *matHeaderCellDef> Quantidade </th>
+                                  <td mat-cell *matCellDef="let element"> {{element.qtde}} </td>
+                                  <td mat-footer-cell *matFooterCellDef></td>
+                                </ng-container>
+                              
+                                <!-- Symbol Column -->
+                                <ng-container matColumnDef="valor">
+                                  <th mat-header-cell *matHeaderCellDef> Valor por pessoa </th>
+                                  <td mat-cell *matCellDef="let element"> {{element.valor | currency:'RUB':'symbol-narrow'}} </td>
+                                  <td mat-footer-cell *matFooterCellDef> </td>
+                                </ng-container>
+                                
+                                <ng-container matColumnDef="totais">
+                                    <th mat-header-cell *matHeaderCellDef> Valor total </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.totais | currency:'RUB':'symbol-narrow'}} </td>
+                                    <td mat-footer-cell *matFooterCellDef> {{getTotalCost() | currency:'RUB':'symbol-narrow'}} </td>
+                                  </ng-container>
+
+                                  <ng-container matColumnDef="delete">
+                                    <th mat-header-cell *matHeaderCellDef> Remover </th>
+                                    <td mat-cell *matCellDef="let element"> 
+                                        <button
+                                        mat-button color="warn"
+                                        (click)="removeRow(element)"
+                                      > <mat-icon>delete</mat-icon>
+                                      </button> </td>
+                                    <td mat-footer-cell *matFooterCellDef> </td>
+                                  </ng-container>
+
+                                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                                <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
+                              </table>
+                            <br/>
+
+                            <div> Meus dados</div>
+                            <br/>
+                            <div class="longContainer">
+                                <mat-form-field appearance="outline">
+                                  <mat-label>Nome</mat-label>
+                                  <input matInput placeholder="Nome" [formControl]="nomeCliente" required>
+                                  <mat-error *ngIf="nomeCliente.invalid">{{getErrorMessage()}}</mat-error>
+                                </mat-form-field>
+                            </div>
+                            <div class="longContainer">
+                                <mat-form-field appearance="outline">
+                                  <mat-label>Email</mat-label>
+                                  <input matInput placeholder="oak@example.com" [formControl]="email" required>
+                                  <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                                </mat-form-field>
+                            </div>
+                                <div class="d-flex justify-content-between longContainer">
+                                    <div class="largeField">
+                                        <mat-form-field appearance="outline"  >
+                                            <mat-label>Número do cartão</mat-label>
+                                            <input matInput placeholder="pat@example.com" [formControl]="numCartao" required>
+                                            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                                          </mat-form-field>
+                                    </div>
+                                    <div class="smallField">
+                                        <mat-form-field appearance="outline" >
+                                            <mat-label>Data Expiração</mat-label>
+                                            <input matInput placeholder="pat@example.com" [formControl]="dtExpiracao" required>
+                                            <mat-error *ngIf="dtExpiracao.invalid">{{getErrorMessage()}}</mat-error>
+                                          </mat-form-field>
+                                    </div>
+
+                                    <div class="smallField">
+                                        <mat-form-field appearance="outline" >
+                                            <mat-label>CVV</mat-label>
+                                            <input matInput placeholder="pat@example.com" [formControl]="cvv" required>
+                                            <mat-error *ngIf="cvv.invalid">{{getErrorMessage()}}</mat-error>
+                                          </mat-form-field>
+                                    </div>
+
+                                </div>
+                                <div class="d-flex justify-content-evenly">
+
+                                </div>
+
+                            <div class="d-flex justify-content-center" (click)="finalizarPedido()">
+                                <button type="button" class="btn btn-dark" >
+                                    Finalizar Pedido
+                                </button>
+                            </div>
+
+                        </div>
+                        <div class="emptyCart" *ngIf="mensagem">
+                            <h1> Seu carrinho está vazio </h1>
+                            <img src="..\..\assets\images\Snorlaxing.gif" alt="Snorlax Sleeping">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

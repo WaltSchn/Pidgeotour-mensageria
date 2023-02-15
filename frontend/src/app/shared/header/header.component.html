@@ -1,0 +1,83 @@
+
+<div id="background-img">
+  <div class="container">
+    <nav class="navbar navbar-expand-sm navbar-dark" >
+      <div class="container-fluid">
+        <div>
+          <a routerLink="" routerLinkActive="active-link">
+            <img
+            alt="Pidgeotour Logo"
+            loading="lazy"
+            src= "../../assets/images/Pidgeotour-logo.png">
+            </a>
+        </div>
+
+  <button type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler">
+  <span class="navbar-toggler-icon"></span>
+  </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+          <div class="me-auto">
+          <ul class="navbar-nav ">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" routerLink="destinations" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:true}">Roteiros</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" routerLink="about" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:true}">Sobre nós</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" routerLink="contact" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:true}">Fale conosco</a>
+            </li>
+  <!--
+            <li class="nav-item me-auto">
+              <a class="nav-link" aria-current="page" routerLink="profile" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">Perfil</a>
+            </li>
+            -->
+          </ul>
+
+
+
+          </div>
+          <!-- se nao tiver logado, login (entrar); se estiver, redirecionar para tela de perfil-->
+
+          <div class="align-middle pr-3" id="cart" *ngIf="!showLogin">
+            <a class="nav-link " aria-current="page" routerLink="cart" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
+            <i class="bi bi-cart3 align-middle pr-3"></i>
+          </a>
+          </div>
+
+          <div class="float-right pl-3" id="login">
+            <button  class="nav-link" aria-current="page" (click)="logout()" *ngIf="!showLogin">
+            <i class="bi bi-person-circle align-middle"></i>
+            <p class="align-middle mt-2" id="loginText">
+              Logout
+            </p>
+          </button>
+          </div>
+
+
+          <div class="float-right pl-3" id="login">
+            <button  class="nav-link" aria-current="page" (click)="openModal()" *ngIf="showLogin">
+            <i class="bi bi-person-circle align-middle"></i>
+            <p class="align-middle mt-2" id="loginText">
+              Login
+            </p>
+          </button>
+          </div>
+
+
+        </div>
+
+
+        <hr />
+
+      </div>
+
+  </nav>
+  </div>
+</div>
+
+
+
+

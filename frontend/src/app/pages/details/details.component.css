@@ -1,0 +1,31 @@
+#voltar a {
+    color: black;
+    text-decoration: none;
+    font-size: large;
+}
+
+#voltar i {
+    color: black;
+}
+
+#voltar a:hover {
+    color: #3197cb;
+}
+
+.carousel img {
+    height: 615px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+full-calendar{
+    color: black;
+    text-decoration: none;
+}
+
+.demo-app-main {
+    flex-grow: 1;
+    padding: 3em;
+  }
+  

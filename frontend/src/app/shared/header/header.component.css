@@ -1,0 +1,100 @@
+@media screen and (min-width:992px) {
+    .navbar{
+        padding: 0;
+
+    }
+
+    .navbar .navbar-nav .nav-link{
+        padding: 0.5em 0;
+    }
+
+    .navbar .navbar-nav .nav-item{
+        margin: 0 5em;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    #perfil a {
+            color: #d35a7c !important;
+        }
+        #perfil a:hover{
+            color: #3197cb !important;
+        }
+
+        #login button{
+            background-color:transparent !important;
+            border: none;
+            color: #d35a7c !important
+        }
+
+        #login button:hover{
+            color: #3197cb !important;
+        }
+  }
+
+.navbar .navbar-nav .nav-item{
+    position: relative;
+}
+
+.navbar .navbar-nav .nav-item::after{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    content:'';
+    background-color: #f6ca7a;
+    width: 0%;
+    height: 3px;
+    transition: all .5s;
+}
+
+.navbar .navbar-nav .nav-item:hover::after{
+    width: 100%;
+}
+
+#navbarSupportedContent ul li a{
+    font-size: x-large;
+    color: #d35a7c;
+    font-weight: bold;
+}
+
+#navbarSupportedContent ul li a:hover{
+    color: #3197cb;
+}
+
+#background-img{
+    background-image: url("../../../assets/images/Wide-background.jpg");
+
+}
+
+i{
+  font-size: 3.5em;
+}
+
+#loginText{
+  font-size: 1.1em;
+}
+
+#perfil a:hover{
+    color: #3197cb;
+}
+
+#cart {
+    margin-right: 1em;
+    color: #d35a7c;
+}
+
+#cart a:hover{
+    color: #3197cb;
+}
+
+#login button{
+    background-color:transparent !important;
+    border: none;
+}
+
+#login button:hover{
+    color: #3197cb;
+}
+

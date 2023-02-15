@@ -1,0 +1,15 @@
+#link-button{
+    background-color:transparent !important;
+    border: none;
+    text-decoration: underline;
+}
+
+#link-button:hover{
+    color: #3197cb;
+}
+
+.modal-lg {
+  min-height: 300px !important;
+}
+
+

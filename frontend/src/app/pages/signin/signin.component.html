@@ -1,0 +1,89 @@
+
+    <div class="modal-lg">
+    <div class="modal-body ">
+        <div *ngIf="!cadastroView">
+            <h3 class="text-center">Login</h3>
+
+            <form [formGroup]="loginForm" class="form mt-4" (submit)="(login())">
+                <div class="form-group mb-4">
+                    <input formControlName="userName" class="form-control" placeholder="usuário" >
+                    <small *ngIf="loginForm.get('userName').untouched && loginForm.get('userName').pristine" class="d-block mt-2">
+                      *campo obrigatório
+                  </small>
+                    <small *ngIf="loginForm.get('userName').errors?.required && (loginForm.get('userName').dirty || loginForm.get('userName').touched)" class="text-danger d-block mt-2">
+                        Este campo não pode estar em branco!
+                    </small>
+                </div>
+
+                <div class="form-group mt-4">
+                    <input formControlName="password" type="password" class="form-control" placeholder="senha">
+                    <small *ngIf="loginForm.get('password').untouched && loginForm.get('password').pristine" class="d-block mt-2">
+                      *campo obrigatório
+                  </small>
+                    <small *ngIf="loginForm.get('password').errors?.required && (loginForm.get('password').dirty || loginForm.get('password').touched)" class="text-danger d-block mt-2">
+                        Este campo não pode estar em branco!
+                    </small>
+                </div>
+                <br/>
+                <div class="row">
+                    <div class="col text-center mt-2">
+                        <button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary btn-block">Login</button>
+                    </div>
+
+                </div>
+
+            </form>
+
+            <br/>
+                <div class="text-center">
+                    <p class="mr-auto">Ainda não é cadastrado?
+                        <button (click)="cadastroViewChange()" id="link-button">Cadastre-se aqui</button>
+                    </p>
+                </div>
+        </div>
+        <div *ngIf="cadastroView">
+            <h3 class="text-center">Cadastre sua conta</h3>
+
+            <form [formGroup]="registerForm" class="form mt-4" (submit)="(register())">
+                <div class="form-group">
+                    <input formControlName="userName" class="form-control" placeholder="usuário">
+                    <small *ngIf="registerForm.get('userName').untouched && registerForm.get('userName').pristine" class="d-block mt-2">
+                      *campo obrigatório
+                  </small>
+                    <small *ngIf="registerForm.get('userName').errors?.required && (registerForm.get('userName').dirty || registerForm.get('userName').touched)" class="text-danger d-block mt-2">
+                        Este campo não pode estar em branco!
+                    </small>
+                </div>
+
+
+                <div class="form-group mt-4">
+                    <input formControlName="password" type="password" class="form-control" placeholder="senha">
+                    <small *ngIf="registerForm.get('password').untouched && registerForm.get('password').pristine" class="d-block mt-2">
+                      *campo obrigatório
+                  </small>
+                    <small *ngIf="registerForm.get('password').errors?.required && (registerForm.get('password').dirty || registerForm.get('password').touched)" class="text-danger d-block mt-2">
+                        Este campo não pode estar em branco!
+                    </small>
+                </div>
+                <br/>
+                <div class="row">
+                    <div class="col text-center mt-2">
+                        <button [disabled]="registerForm.invalid" type="submit" class="btn btn-primary btn-block">Cadastrar</button>
+                    </div>
+
+                </div>
+
+            </form>
+            <br/>
+                <div class="text-center">
+                    <p class="mr-auto">Já possui cadastro?
+                        <button (click)="cadastroViewChange()" id="link-button">Faça login aqui</button>
+                    </p>
+                </div>
+        </div>
+    </div>
+  </div>
+
+
+
+

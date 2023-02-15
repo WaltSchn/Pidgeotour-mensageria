@@ -1,0 +1,40 @@
+<div class="container">
+
+    <div class="container">
+        <div class="row my-2">
+            <div class="container">
+                <div class="col-12">
+                    <div class="card" >
+                        <div class="card-body">
+                            <h2 class="card-title" > Roteiros </h2>
+                            <div class="row g-3 my-2">
+                                <div class="col-12 col-md-6 col-lg-4" *ngFor="let d of destinos">
+                                    <div class="card h-100 " id="card" >
+                                        <a routerLink="/details/{{ d.id }}" routerLinkActive="active">
+                                        <img src="{{d.url}}" alt="{{d.nome}}" class="card-img-top" (error)="errorhandler($event)" >
+                                        <div class="card-body align-items-center d-flex">
+                                            <h2 class="card-title" > {{ d.nome }} </h2>
+                                            
+                                        </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    

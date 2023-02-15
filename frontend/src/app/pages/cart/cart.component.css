@@ -1,0 +1,33 @@
+.longContainer mat-form-field {
+    width: 100%;
+    }
+
+.largeField{
+    width: 50% !important;
+}
+
+.largeField{
+    width: 20%;
+}
+
+table {
+    width: 100%;
+}
+
+  .mdc-data-table__cell {
+    text-align: center !important;
+  }
+
+  .mdc-data-table__header-cell{
+    text-align: center !important;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  .emptyCart{
+    align-items: center;
+    text-align: center;
+  }
+  
